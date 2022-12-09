@@ -28,7 +28,7 @@ spec:
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
-        - name: {{ .Chart.Name }}
+        - name: {{ .Values.appName }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "633788536644.dkr.ecr.us-east-1.amazonaws.com/{{ .Values.componentName }}:{{ .Values.appVersion }}"
